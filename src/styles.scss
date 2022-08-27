@@ -12,7 +12,7 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$website-primary: mat-palette($mat-indigo);
+$website-primary: mat-palette($mat-cyan);
 $website-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -32,6 +32,24 @@ $website-theme: mat-light-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($website-theme);
+
+
+// Dark color
+$website-primary-dark : mat-palette($mat-cyan, 900);
+$website-accent-dark: mat-palette($mat-teal, A400);
+
+$website-theme-dark: mat-dark-theme((
+  color: (
+    primary: $website-primary-dark,
+    accent: $website-accent-dark,
+    warn: $website-warn,
+  )
+));
+
+.dark-theme-mode {
+  @include angular-material-theme($website-theme-dark);
+}
+
 
 /* You can add global styles to this file, and also import other style files */
 

@@ -99,4 +99,4 @@ export const MaterialDesign = [
   // OverlayModule,
   // PortalModule,
   // ScrollingModule
-]
+];
