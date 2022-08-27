@@ -46,14 +46,14 @@
   }
 </style>
 
-<mat-sidenav-container fullscreen class="mat-app-background" [ngClass]="{'dark-theme-mode':isDarkTheme}">
+<mat-sidenav-container fullscreen class="mat-app-background" [ngClass]="{'dark-theme-mode':websiteTheme.isDarkTheme}">
   <mat-sidenav #sidenav role="navigation" [autoFocus]="false">
     <!-- <app-sidenav (sidenavClose)="sidenav.close()"></app-sidenav> -->
     <app-sidenav></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
     <!-- <app-toolbar (sidenavToggle)="sidenav.toggle()"></app-toolbar> -->
-    <app-toolbar (darkMode)="darkTheme($event)"></app-toolbar>
+    <app-toolbar></app-toolbar>
 
     <div class="content" role="main">
       <router-outlet></router-outlet>

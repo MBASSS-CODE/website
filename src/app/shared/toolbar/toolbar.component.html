@@ -12,7 +12,7 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>share</mat-icon>
   </button>
-  <mat-slide-toggle color="accent" [checked]="toggleTheme" (change)="darkModeSwitch($event)">
-    <mat-icon>{{darkModeIcon}}</mat-icon>
+  <mat-slide-toggle color="accent" [checked]="websiteTheme.isDarkTheme" (change)="websiteTheme.themeChange($event)">
+    <mat-icon>{{websiteTheme.themeIcon}}</mat-icon>
   </mat-slide-toggle>
 </mat-toolbar>

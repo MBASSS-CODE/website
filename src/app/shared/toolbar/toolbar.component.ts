@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { WebsiteTheme } from 'src/utility/websiteTheme.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -13,24 +14,12 @@ export class ToolbarComponent implements OnInit {
 
   @Output() public darkMode = new EventEmitter;
 
-  constructor() { }
+  constructor(
+    public websiteTheme : WebsiteTheme
+  ) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('theme') === "Dark") {
-      this.toggleTheme = true;
-      this.darkModeIcon = 'dark_mode';
-    } else {
-      this.toggleTheme = false;
-      this.darkModeIcon = 'light_mode';
-    }
+    this.websiteTheme.themeOnInitCheck();
   }
 
-  darkModeSwitch (event) {
-    this.darkMode.emit(event);
-    if (event.checked) {
-      this.darkModeIcon = 'dark_mode';
-    } else {
-      this.darkModeIcon = 'light_mode';
-    }
-  }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebsiteTheme } from 'src/utility/websiteTheme.service';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +10,12 @@ export class AppComponent {
 
   isDarkTheme: boolean = false;
 
+  constructor(
+    public websiteTheme: WebsiteTheme
+  ){}
+
   ngOnInit(): void {
-    this.isDarkTheme = localStorage.getItem('theme') === 'Dark' ? true : false;
+    this.websiteTheme.themeOnInitCheck();
   }
 
-  darkTheme(event) {
-    if (event.checked) {
-      this.isDarkTheme = true;
-      localStorage.setItem('theme', "Dark");
-    } else {
-      this.isDarkTheme = false;
-      localStorage.setItem('theme', "Light");
-    }
-  }
 }
